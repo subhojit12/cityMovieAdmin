@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-button style="height:35px" color="danger" href="/login">Logout</ion-button>
+    <ion-title>
+      Movies
+    </ion-title>
+    <ion-button style="height:35px;float:right" color="success" href="/add-movie">Add Movie</ion-button>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col *ngFor="let m of movies" size="4">
+        <ion-img src="{{m.image_url}}" ></ion-img>
+        <ion-col>
+          <ion-icon name="create" color="success" (click)="onSelect(m)"></ion-icon>
+          <ion-icon name="trash" color="danger" style="float: right" (click)="deleteMovie(m)"></ion-icon>
+        </ion-col>
+        
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
